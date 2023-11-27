@@ -116,10 +116,13 @@ const MintPage = () => {
     return (
       <div className='h-full text-gray-300 w-full flex flex-col justify-center items-center pt-20'>
         <div className='flex flex-col items-center justify-center'>
-          <p className='mb-3 text-2xl'>
-            Please connect your wallet to proceed.
-          </p>
-          <button onClick={login}>login</button>
+          <p className='mb-3 text-2xl'>Please login to proceed.</p>
+          <button
+            className='px-4 py-1 rounded-lg w-fit text-black bg-green-500 hover:bg-green-600'
+            onClick={login}
+          >
+            login
+          </button>{' '}
         </div>
       </div>
     );
@@ -308,7 +311,12 @@ const MintPage = () => {
         ) : (
           <div className='flex flex-col items-center justify-center'>
             <p className='mb-3'>Please login to proceed.</p>
-            <button onClick={login}>login</button>
+            <button
+              className='px-4 py-1 rounded-lg w-fit text-black bg-green-500 hover:bg-green-600'
+              onClick={login}
+            >
+              login
+            </button>
           </div>
         )}
       </div>

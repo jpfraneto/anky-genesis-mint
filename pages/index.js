@@ -75,9 +75,12 @@ export default function Home(props) {
     <div className='flex flex-col justify-center text-gray-400 w-screen pb-8'>
       <div className='h-screen flex flex-col items-center pt-32 px-3 md:w-1/2 mx-auto '>
         <h1 className='text-5xl font-bold mb-8 '>who am i ?</h1>
-        <p className='text-gray-400 text-xl mb-4'>
+        <p className='text-gray-400 text-xl mb-2'>
           Anky is a brand distilled from the eternal exploration into this
-          inquiry. It all starts from the story of an ape that is depressed.
+          inquiry.
+        </p>
+        <p className='text-gray-400 text-xl mb-4'>
+          an invitation to navigate the consequences of it together.
         </p>
 
         <div className='flex space-x-8'>
