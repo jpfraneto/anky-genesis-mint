@@ -71,6 +71,9 @@ const MintPage = () => {
   async function mintAnky() {
     try {
       console.log('inside the mint anky function', contract);
+      setErrorFromTransaction(false);
+      setTransactionLoading(true);
+
       let provider = await thisWallet.getEthersProvider();
       console.log('the provider is: ', provider);
       let signer = await provider.getSigner();
