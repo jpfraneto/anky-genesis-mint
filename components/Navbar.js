@@ -37,9 +37,19 @@ const Navbar = ({ musicVolume, changeVolumeGradually }) => {
         </div>
         <div>
           {authenticated ? (
-            <button onClick={logout}>logout</button>
+            <button
+              className='px-4 py-1 rounded-lg w-fit text-black bg-red-500 hover:bg-red-600'
+              onClick={logout}
+            >
+              logout
+            </button>
           ) : (
-            <button onClick={login}>login</button>
+            <button
+              className='px-4 py-1 rounded-lg w-fit text-black bg-green-500 hover:bg-green-600'
+              onClick={login}
+            >
+              login
+            </button>
           )}
         </div>
       </div>
