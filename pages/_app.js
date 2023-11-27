@@ -112,82 +112,15 @@ function MyApp({ Component, pageProps }) {
       >
         <PrivyWagmiConnector wagmiChainsConfig={configureChainsConfig}>
           <main className={`${righteous.className} h-full`}>
-            {!modalOpen && (
-              <>
-                <Navbar
-                  musicVolume={musicVolume}
-                  changeVolumeGradually={changeVolumeGradually}
-                />
-                <Component
-                  {...pageProps}
-                  onVideoPlay={onVideoPlay}
-                  onVideoStop={onVideoStop}
-                />
-              </>
-            )}
-
-            {!alreadyOpened && (
-              <Modal
-                isOpen={modalOpen}
-                onRequestClose={() => setModalOpen(false)}
-                contentLabel='Music Modal'
-                className={`${righteous.className} flex items-center justify-center fixed inset-0 z-50 outline-none focus:outline-none`}
-                overlayClassName='fixed inset-0 bg-black opacity-100 z-40'
-              >
-                <div className='relative w-auto mx-auto max-w-3xl'>
-                  <div className='border-0 rounded-lg shadow-lg relative p-6 flex flex-col w-full bg-white dark:bg-gray-800 outline-none focus:outline-none'>
-                    <h1
-                      className='font-extrabold text-transparent mt-4 mb-2 w-fit text-4xl bg-clip-text'
-                      style={{
-                        background:
-                          'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, white)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                      }}
-                    >
-                      welcome to the ankyverse
-                    </h1>
-
-                    <div className='relative  flex-auto'>
-                      <p className='mt-2 mb-4 text-gray-400 text-lg leading-relaxed'>
-                        This world is a sensorial experience, and it all starts
-                        with sound. Do you want to navigate the journey through
-                        this website using music? (highly recommended).
-                      </p>
-                    </div>
-                    <div className='flex space-x-2'>
-                      <button
-                        className='bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:opacity-70'
-                        type='button'
-                        onClick={() => {
-                          setAlreadyOpened(true);
-                          setMusicOn(true);
-                          setModalOpen(false);
-                        }}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        className='text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:opacity-70'
-                        type='button'
-                        onClick={() => {
-                          setMusicOn(false);
-                          setModalOpen(false);
-                        }}
-                      >
-                        No
-                      </button>
-                    </div>
-                    <small className='mt-4 text-gray-400'>
-                      (The album is called Collected Dream Fragments, by
-                      Hypnagog. I asked him to use his music here, as a way of
-                      honoring is life path. His journey is also the one of
-                      Anky, and his music represents it with mastery.)
-                    </small>
-                  </div>
-                </div>
-              </Modal>
-            )}
+            <Navbar
+              musicVolume={musicVolume}
+              changeVolumeGradually={changeVolumeGradually}
+            />
+            <Component
+              {...pageProps}
+              onVideoPlay={onVideoPlay}
+              onVideoStop={onVideoStop}
+            />
           </main>
         </PrivyWagmiConnector>
       </PrivyProvider>
