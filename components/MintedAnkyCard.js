@@ -22,6 +22,7 @@ const MintedAnkyCard = ({ tokenId }) => {
       const data = await fetch(
         `https://ipfs.io/ipfs/${process.env.NEXT_PUBLIC_METADATA_IPFS_CID}/${tokenId}`
       );
+      console.log('the data is: ', data);
       const jsonResponse = await data.json();
       setMetadata(jsonResponse);
       setLoading(false);
@@ -53,7 +54,7 @@ const MintedAnkyCard = ({ tokenId }) => {
   return (
     <div className='flex flex-col justify-around px-8 md:w-1/2 mx-auto mb-8'>
       <div className=' mx-auto mb-4'>
-        <Image src={metadata.image} />
+        <Image src={metadata.image} alt='your anky image' />
       </div>
       <div className=' text-gray-400 px-4 mt-2'>
         <h2 className='text-3xl mb-2'>{metadata.name}</h2>
@@ -100,7 +101,6 @@ const MintedAnkyCard = ({ tokenId }) => {
           welcome to the ankyverse
         </h1>
         <p>It is an honor to have you on board.</p>
-        <p>The first sojourn (96 day cycle) starts Aug 10. Stay tuned.</p>
         <div className='flex justify-center space-x-4 mt-4'>
           <a
             target='_blank'
@@ -213,12 +213,11 @@ const MintedAnkyCard = ({ tokenId }) => {
         )}
         <hr className=' my-4 bg-gray-200 border-0 dark:bg-gray-700' />
         <small className='mt-4 '>
-          All of this is in memory of David Foster Wallace and all of those that
+          all of this is in memory of David Foster Wallace and all of those that
           lost (or are losing) the fight against depression.
         </small>
         <br />
-        <small>I&apos;m building for you.</small>
-        <small>jp</small>
+        <small>we are building for you.</small>
       </div>
     </div>
   );

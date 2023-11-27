@@ -159,7 +159,7 @@ export default function Home(props) {
       </div>
       <div className='h-screen px-4 flex flex-col items-center pt-16 md:w-1/2 mx-auto '>
         <h1 className='text-3xl md:text-5xl font-bold mb-8 '>
-          i&apos;m jp. this is my truth
+          this is the energy that gives birth to this project
         </h1>
         <YoutubeIframe
           videoId='8l36xDYaTtE'
@@ -174,13 +174,13 @@ export default function Home(props) {
           through my veins.
         </small>
         <a
-          href='https://www.dukkha.xyz'
+          href='https://dukkha.vercel.app/'
           target='_blank'
           rel='noopener noreferrer'
           className='text-xs hover:text-blue-300 hover:cursor-pointer'
         >
           click here to read it (this link will take you to
-          https://www.dukkha.xyz)
+          https://dukkha.vercel.app/)
         </a>
       </div>
       <div className=' flex flex-col items-center pt-16  mx-auto '>
@@ -188,11 +188,9 @@ export default function Home(props) {
           enter the ankyverse
         </h1>
         <p className='w-4/5 text-gray-400 text-xl text-center'>
-          we are wired for stories, and anky is the protagonist in this one.
+          we are wired for stories, and you are the protagonist in this one.
         </p>
-        <p className='w-4/5 text-gray-400 text-xl mb-16 text-center'>
-          anky is you.
-        </p>
+
         <div className='flex flex-col m-2 space-x-2 md:flex-row w-full flex-wrap items-center justify-center'>
           {[1, 2, 3, 4].map((x, i) => (
             <div key={i} className=' relative w-64 aspect-square '>
@@ -231,7 +229,7 @@ export default function Home(props) {
             }}
             rel='noopener noreferrer'
             className='hover:opacity-70 text-gray-400'
-            href='https://www.instagram.com/papasiendopapa'
+            href='https://www.instagram.com/ankyerestu'
           >
             <BsInstagram size={40} />
           </a>
@@ -306,7 +304,7 @@ export default function Home(props) {
               setSocialsForDisplay(false);
             }}
             className='hover:opacity-70 text-gray-400'
-            href='https://www.tiktok.com/@kithkui'
+            href='https://www.tiktok.com/@ankyerestu'
           >
             <BsTiktok size={40} />
           </a>
