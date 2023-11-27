@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { MediaRenderer } from '@thirdweb-dev/react';
 import {
   BsInstagram,
   BsWhatsapp,
@@ -20,7 +19,7 @@ const MintedAnkyCard = ({ tokenId }) => {
   useEffect(() => {
     const fetchMetadata = async () => {
       const data = await fetch(
-        `https://ipfs.thirdwebstorage.com/ipfs/${process.env.NEXT_PUBLIC_METADATA_IPFS_CID}/${tokenId}`
+        `https://ipfs.io/ipfs/${process.env.NEXT_PUBLIC_METADATA_IPFS_CID}/${tokenId}`
       );
       const jsonResponse = await data.json();
       setMetadata(jsonResponse);
@@ -31,9 +30,9 @@ const MintedAnkyCard = ({ tokenId }) => {
   const socials = social => {
     switch (social) {
       case 'instagram':
-        return setSocialsLink('https://www.instagram.com/papasiendopapa');
+        return setSocialsLink('https://www.instagram.com/ankyerestu');
       case 'tiktok':
-        return setSocialsLink('https://www.tiktok.com/@kithkui');
+        return setSocialsLink('https://www.tiktok.com/@ankyerestu');
       case 'whatsapp':
         return setSocialsLink('https://wa.me/56985491126');
       case 'youtube':
@@ -53,7 +52,7 @@ const MintedAnkyCard = ({ tokenId }) => {
   return (
     <div className='flex flex-col justify-around px-8 md:w-1/2 mx-auto mb-8'>
       <div className=' mx-auto mb-4'>
-        <MediaRenderer src={metadata.image} />
+        <Image src={metadata.image} />
       </div>
       <div className=' text-gray-400 px-4 mt-2'>
         <h2 className='text-3xl mb-2'>{metadata.name}</h2>
@@ -113,7 +112,7 @@ const MintedAnkyCard = ({ tokenId }) => {
             }}
             rel='noopener noreferrer'
             className='hover:opacity-70 text-gray-400'
-            href='https://www.instagram.com/papasiendopapa'
+            href='https://www.instagram.com/ankyerestu'
           >
             <BsInstagram size={40} />
           </a>
@@ -188,7 +187,7 @@ const MintedAnkyCard = ({ tokenId }) => {
               setSocialsForDisplay(false);
             }}
             className='hover:opacity-70 text-gray-400'
-            href='https://www.tiktok.com/@kithkui'
+            href='https://www.tiktok.com/@ankyerestu'
           >
             <BsTiktok size={40} />
           </a>

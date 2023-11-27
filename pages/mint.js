@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useWallets, usePrivy } from '@privy-io/react-auth';
 import { useRouter } from 'next/router';
 import { ethers, BigNumber } from 'ethers';
+import MintedAnkyCard from '../components/MintedAnkyCard';
 import ankyGenesisAbi from '../lib/anky_genesis_abi.json';
 
 const MintPage = () => {
@@ -294,8 +295,8 @@ const MintPage = () => {
           </div>
         ) : (
           <div className='flex flex-col items-center justify-center'>
-            <p className='mb-3'>Please connect your wallet to proceed.</p>
-            <ConnectWallet className='hover:opacity-70' btnTitle='Login' />
+            <p className='mb-3'>Please login to proceed.</p>
+            <button onClick={login}>login</button>
           </div>
         )}
       </div>
