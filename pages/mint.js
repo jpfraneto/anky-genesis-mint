@@ -25,6 +25,7 @@ const MintPage = () => {
   const [mintedTokenId, setMintedTokenId] = useState('');
   const { wallets } = useWallets();
   const thisWallet = wallets[0];
+  console.log('the wallets are: ', wallets);
 
   useEffect(() => {
     const loadSmartContract = async () => {
