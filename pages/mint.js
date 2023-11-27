@@ -1,31 +1,19 @@
-import {
-  useAddress,
-  ConnectWallet,
-  Web3Button,
-  useContract,
-  useNFTBalance,
-  useContractWrite,
-  useSigner,
-} from '@thirdweb-dev/react';
-import { ThirdwebSDK } from '@thirdweb-dev/sdk/evm';
 import Image from 'next/image';
-import MintedAnkyCard from '../components/MintedAnkyCard';
 import { useState, useEffect, useMemo } from 'react';
-
+import { useWallets, usePrivy } from '@privy-io/react-auth';
 import { useRouter } from 'next/router';
 import { ethers, BigNumber } from 'ethers';
+import ankyGenesisAbi from '../lib/anky_genesis_abi.json';
 
 const MintPage = () => {
   const router = useRouter();
-  const signer = useSigner();
-  const address = useAddress();
+  const { authenticated, loading, login } = usePrivy();
   const [mintAmount, setMintAmount] = useState(1);
   const [contractHovered, setContractHovered] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [totalMinted, setTotalMinted] = useState(0);
   const [errorMessage, setErrorMessage] = useState('');
   const [balance, setBalance] = useState(null);
-  const [transactionLoading, setTransactionLoading] = useState(false);
+  const [transactionLoading, setTransactionLoading] = useState(true);
   const [transactionSuccess, setTransactionSuccess] = useState(false);
   const [alreadyMinted, setAlreadyMinted] = useState(false);
   const [loadingPage, setLoadingPage] = useState(true);
@@ -34,87 +22,71 @@ const MintPage = () => {
   const [revealAnky, setRevealAnky] = useState(false);
   const [contract, setContract] = useState(null);
   const [mintedTokenId, setMintedTokenId] = useState('');
-  let sdk;
-  if (signer) {
-    sdk = ThirdwebSDK.fromSigner(signer);
-  }
+  const { wallets } = useWallets();
+  const thisWallet = wallets[0];
 
   useEffect(() => {
     const loadSmartContract = async () => {
-      if (sdk) {
-        const contractResponse = await sdk.getContract(
-          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
+      if (thisWallet && thisWallet.address) {
+        console.log('inside the load smart contract function');
+        let provider = await thisWallet.getEthersProvider();
+        console.log('the provider is: ', provider);
+        let signer = await provider.getSigner();
+        const ankyGenesisContract = new ethers.Contract(
+          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+          ankyGenesisAbi,
+          signer
         );
-        if (contractResponse) {
-          setContract(contractResponse);
-        }
+        console.log('the anky genesis contract is: ', ankyGenesisContract);
+        setContract(ankyGenesisContract);
       }
-      setLoadingPage(false);
     };
     loadSmartContract();
-  }, []);
+  }, [thisWallet]);
 
   useEffect(() => {
     const checkIfMinted = async () => {
       console.log('inside the check if minted function');
       try {
-        if (!contract || !address) return;
-        const data = await contract.call('tokenOfOwnerByIndex', [address, 0]);
-        const tokenOfAddress = BigNumber.from(data._hex).toString();
-        setAlreadyMinted(true);
-        setMintedTokenId(tokenOfAddress);
+        if (!contract || !thisWallet.address) return;
+        const address = thisWallet.address;
+        const hasBalance = await contract.balanceOf(address);
+        console.log('has balance', hasBalance);
+        const balance = ethers.utils.formatUnits(hasBalance, 0);
+
+        if (balance > 0) {
+          const data = await contract.tokenOfOwnerByIndex(address, 0);
+          const tokenOfAddress = BigNumber.from(data._hex).toString();
+          setAlreadyMinted(true);
+          setMintedTokenId(tokenOfAddress);
+        }
       } catch (error) {
         console.log('the error is: ', error);
       }
-      setLoading(false);
     };
     checkIfMinted();
-  }, [address, contract]);
+  }, [thisWallet, contract]);
 
-  async function claimToken() {
+  async function mintAnky() {
     try {
-      setTransactionLoading(true);
+      console.log('inside the mint anky function', contract);
+      const price = await ethers.utils.parseEther('0.01618');
       setTransactionSent(true);
-      console.log('inside the claim token function, the signer is: ', signer);
-      const data = await contract?.call(
-        'mint', // Name of your function as it is on the smart contract
-        [],
-        {
-          value: ethers.utils.parseEther('0.01618'), // send token with the contract call
-        }
-      );
-      console.log(
-        'the data that came back from the call to the smart contract is: ',
-        data
-      );
+      console.log('the price is: ', price);
+      const tx = await contract.mint({ value: price });
+      console.log('the tx response is: ', tx);
+
+      const receipt = await tx.wait();
       setTransactionLoading(false);
-      if (data) {
-        setTransactionSuccess(true);
-        const mintedTokenId = BigNumber.from(data.receipt.logs[0].topics[3]);
-        setMintedTokenId(mintedTokenId);
-      }
+
+      setTransactionSuccess(true);
     } catch (error) {
-      console.log("the error is:'", error);
-      setErrorMessage(error);
+      console.log('there was an error', error);
       setErrorFromTransaction(true);
-      setTransactionLoading(false);
-      console.error(error);
     }
   }
 
-  if (!address)
-    return (
-      <div className='h-full text-gray-300 w-full flex flex-col justify-center items-center pt-20'>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='mb-3 text-2xl'>
-            Please connect your wallet to proceed.
-          </p>
-          <ConnectWallet className='hover:opacity-70' btnTitle='Login' />
-        </div>
-      </div>
-    );
-
-  if (loadingPage)
+  if (loading)
     return (
       <div className='h-full text-gray-300 w-full flex flex-col justify-center items-center pt-20'>
         <div className='flex flex-col items-center justify-center'>
@@ -123,6 +95,18 @@ const MintPage = () => {
             “Do you have the patience to wait until your mud settles and the
             water is clear?” ~ Lao Tzu
           </small>
+        </div>
+      </div>
+    );
+
+  if (!authenticated)
+    return (
+      <div className='h-full text-gray-300 w-full flex flex-col justify-center items-center pt-20'>
+        <div className='flex flex-col items-center justify-center'>
+          <p className='mb-3 text-2xl'>
+            Please connect your wallet to proceed.
+          </p>
+          <button onClick={login}>login</button>
         </div>
       </div>
     );
@@ -165,7 +149,7 @@ const MintPage = () => {
         </button>
       </div> */}
       <div className='flex flex-col space-y-2'>
-        {address ? (
+        {thisWallet.address ? (
           <div>
             {alreadyMinted ? (
               <div className='flex justify-center flex-col items-center'>
@@ -264,10 +248,10 @@ const MintPage = () => {
                         alt='Anky'
                       />
                     </div>
-                    <div className='flex flex-col justify-center items-center space-x-2 mt-4 justify-center'>
+                    <div className='flex flex-col  items-center space-x-2 mt-4 justify-center'>
                       <button
                         className='px-2 py-1 rounded-lg w-48 text-black bg-green-500 hover:opacity-70'
-                        onClick={() => claimToken()}
+                        onClick={mintAnky}
                       >
                         mint 1 anky <br />
                       </button>
