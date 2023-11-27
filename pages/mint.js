@@ -133,7 +133,8 @@ const MintPage = () => {
         <div className='flex flex-col items-center justify-center'>
           <p className='mb-3'>
             The ankyverse is experiencing some technical difficulties, please
-            refresh this page.
+            refresh this page or contact @jpfraneto on telegram (or @kithkui on
+            X).
           </p>
         </div>
       </div>
