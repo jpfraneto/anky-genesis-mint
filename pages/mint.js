@@ -67,7 +67,7 @@ const MintPage = () => {
       }
     };
     checkIfMinted();
-  }, [thisWallet, contract]);
+  }, [contract]);
 
   async function mintAnky() {
     try {
