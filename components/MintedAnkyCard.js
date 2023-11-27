@@ -14,6 +14,7 @@ import { SiSubstack } from 'react-icons/si';
 const MintedAnkyCard = ({ tokenId }) => {
   const [metadata, setMetadata] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [imageUrl, setImageUrl] = useState('');
   const [socialsForDisplay, setSocialsForDisplay] = useState(false);
   const [socialsLink, setSocialsLink] = useState('');
 
@@ -54,7 +55,12 @@ const MintedAnkyCard = ({ tokenId }) => {
   return (
     <div className='flex flex-col justify-around px-8 md:w-1/2 mx-auto mb-8'>
       <div className=' mx-auto mb-4'>
-        <Image src={metadata.image} alt='your anky image' />
+        <Image
+          src={`https://ipfs.io/ipfs/bafybeienpaqfmetmel6vctkxmg5cmcmcma3cvw23w32jxgxxfj3gjeuuni/${tokenId}.png`}
+          alt='your anky image'
+          width={333}
+          height={333}
+        />
       </div>
       <div className=' text-gray-400 px-4 mt-2'>
         <h2 className='text-3xl mb-2'>{metadata.name}</h2>
