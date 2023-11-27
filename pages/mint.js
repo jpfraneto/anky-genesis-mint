@@ -71,10 +71,18 @@ const MintPage = () => {
   async function mintAnky() {
     try {
       console.log('inside the mint anky function', contract);
+      let provider = await thisWallet.getEthersProvider();
+      console.log('the provider is: ', provider);
+      let signer = await provider.getSigner();
+      const ankyGenesisContract = new ethers.Contract(
+        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+        ankyGenesisAbi,
+        signer
+      );
       const price = await ethers.utils.parseEther('0.01618');
       setTransactionSent(true);
       console.log('the price is: ', price);
-      const tx = await contract.mint({ value: price });
+      const tx = await ankyGenesisContract.mint({ value: price });
       console.log('the tx response is: ', tx);
 
       const receipt = await tx.wait();
@@ -83,6 +91,7 @@ const MintPage = () => {
       setTransactionSuccess(true);
     } catch (error) {
       console.log('there was an error', error);
+      setTransactionLoading(false);
       setErrorFromTransaction(true);
     }
   }
