@@ -8,11 +8,11 @@ import CollectionPage from "./collection/CollectionPage";
 
 const DesktopApp = ({
   setDisplayFullScreenIndex,
-  setEthBalance,
-  ethBalance,
+  setMintingError,
+  mintingError,
 }) => {
   const router = useRouter();
-  const [mintingError, setMintingError] = useState("");
+  const [ethBalance, setEthBalance] = useState(0);
   const { login, authenticated, user, logout, ready, loading } = usePrivy();
   const { wallets } = useWallets();
   const thisWallet = wallets[0];
@@ -84,18 +84,26 @@ const DesktopApp = ({
       const ankyPrice = ethers.parseEther("0.01618");
 
       const tx = await ankyGenesisContract.mint({ value: ankyPrice });
+      if (tx) {
+        setTransactionSuccess(true);
+        const mintedTokenId = BigNumber.from(tx.receipt.logs[0].topics[3]);
+        setMintedTokenId(mintedTokenId);
+      }
       console.log("the tx is: ", tx);
+      alert(
+        "your anky was minted. i will make this flow better, but i had to ship this thing"
+      );
     } catch (err) {
-      console.log("in the error");
+      console.log("in the error", err);
       console.log(ethBalance);
       if (+ethBalance >= 0.01618) {
-        console.log("HEREAS");
         setMintingError("do you already own an anky?");
       } else {
         setMintingError("do you have enough eth?");
       }
     }
   }
+
   function getComponentForRoute(route, router) {
     if (!ready || loading) return;
 
@@ -103,7 +111,9 @@ const DesktopApp = ({
       case "/collection":
         return (
           <CollectionPage
+            mintAnky={mintAnky}
             ethBalance={ethBalance}
+            mintingError={mintingError}
             setDisplayFullScreenIndex={setDisplayFullScreenIndex}
           />
         );

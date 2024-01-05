@@ -6,9 +6,13 @@ import { useSwipeable } from "react-swipeable";
 import { Button } from "react-bootstrap";
 import { usePrivy } from "@privy-io/react-auth";
 
-const CollectionPage = ({ setDisplayFullScreenIndex, ethBalance }) => {
+const CollectionPage = ({
+  mintAnky,
+  setDisplayFullScreenIndex,
+  ethBalance,
+  mintingError,
+}) => {
   const { authenticated, login } = usePrivy();
-  const [currentAnkyIndex, setCurrentAnkyIndex] = useState(0);
   const orderedMetadata = orderByIndex(metadata);
 
   function orderByIndex(arr) {
@@ -26,7 +30,11 @@ const CollectionPage = ({ setDisplayFullScreenIndex, ethBalance }) => {
       </p>
       {authenticated ? (
         <div className="flex ">
-          <MintAnkyButton ethBalance={ethBalance} />
+          <MintAnkyButton
+            mintAnky={mintAnky}
+            ethBalance={ethBalance}
+            mintingError={mintingError}
+          />
           <div className=" px-4">
             <p className="">it is 0.01618, on eth mainnet</p>
             <p>only one per wallet</p>

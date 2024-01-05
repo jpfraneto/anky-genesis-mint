@@ -35,7 +35,7 @@ const righteous = Righteous({ subsets: ["latin"], weight: "400" });
 export default function App({ Component, pageProps }) {
   const [isMobile, setIsMobile] = useState(false);
   const [displayFullScreenIndex, setDisplayFullScreenIndex] = useState(null);
-  const [ethBalance, setEthBalance] = useState(0);
+  const [mintingError, setMintingError] = useState("");
 
   const setDisplayFullScreen = (index) => {
     setDisplayFullScreenIndex(index);
@@ -100,8 +100,8 @@ export default function App({ Component, pageProps }) {
           <NavbarComponent />
           <DesktopApp
             {...pageProps}
-            ethBalance={ethBalance}
-            setEthBalance={setEthBalance}
+            mintingError={mintingError}
+            setMintingError={setMintingError}
             setDisplayFullScreenIndex={setDisplayFullScreenIndex}
           />
           {displayFullScreenIndex !== null && (
