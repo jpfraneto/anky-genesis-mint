@@ -8,6 +8,7 @@ const FullScreenAnkyView = ({ anky, onClose, onNext, onPrevious }) => {
     onSwipedRight: onPrevious,
   });
 
+  if (!anky) return;
   return (
     <div
       {...handlers}
