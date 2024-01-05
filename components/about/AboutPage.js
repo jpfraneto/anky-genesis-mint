@@ -254,8 +254,7 @@ const AboutPage = () => {
       <p>violet.</p>
       <p>white.</p>
       <p>welcome to the ankyverse, i hear on the background of existence.</p>
-      <p>but that i is just not there anymore.</p>
-      <p className="mb-4">it is just not where it was before.</p>
+      <p className="mb-4">but that "i" is not there anymore.</p>
     </div>
   );
 };

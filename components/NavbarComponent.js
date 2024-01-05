@@ -36,15 +36,15 @@ export default function NavbarComponent() {
   return (
     <Navbar expanded={expanded} bg="light" expand="lg" className="mb-3">
       <Container>
-        <Navbar.Brand href="/">ANKY</Navbar.Brand>
+        <Link href="/">ANKY</Link>
         <Navbar.Toggle
           onClick={() => setExpanded(expanded ? false : "expanded")}
           aria-controls="responsive-navbar-nav"
         />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/collection">Collection</Nav.Link>
+            <Link href="/about">About</Link>
+            <Link href="/collection">Collection</Link>
             {/* Add other navigation links as needed */}
           </Nav>
           <Nav>
