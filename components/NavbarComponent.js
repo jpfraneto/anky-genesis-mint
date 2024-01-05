@@ -36,7 +36,7 @@ export default function NavbarComponent() {
   return (
     <Navbar expanded={expanded} bg="light" expand="lg" className="mb-3">
       <Container>
-        <Navbar.Brand href="#home">ANKY</Navbar.Brand>
+        <Navbar.Brand href="/">ANKY</Navbar.Brand>
         <Navbar.Toggle
           onClick={() => setExpanded(expanded ? false : "expanded")}
           aria-controls="responsive-navbar-nav"
