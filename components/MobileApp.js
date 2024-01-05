@@ -5,7 +5,6 @@ import { ethers } from "ethers";
 import { useRouter } from "next/router";
 import CollectionPage from "./collection/CollectionPage";
 import AboutPage from "./about/AboutPage";
-import { Button } from "flowbite-react";
 
 const MobileApp = ({ setDisplayFullScreen, setEthBalance, ethBalance }) => {
   const router = useRouter();

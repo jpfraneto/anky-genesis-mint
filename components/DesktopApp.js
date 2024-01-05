@@ -6,7 +6,11 @@ import AboutPage from "./about/AboutPage";
 import { ethers } from "ethers";
 import CollectionPage from "./collection/CollectionPage";
 
-const DesktopApp = ({ setDisplayFullScreen, setEthBalance, ethBalance }) => {
+const DesktopApp = ({
+  setDisplayFullScreenIndex,
+  setEthBalance,
+  ethBalance,
+}) => {
   const router = useRouter();
   const [mintingError, setMintingError] = useState("");
   const { login, authenticated, user, logout, ready, loading } = usePrivy();
@@ -31,7 +35,6 @@ const DesktopApp = ({ setDisplayFullScreen, setEthBalance, ethBalance }) => {
     async function getUsersAnky() {
       if (!thisWallet) return;
       try {
-      } catch (error) {
         console.log("the wallet is: ", thisWallet);
         const provider = await thisWallet.getEthersProvider();
         console.log("the provider is: ", provider);
@@ -58,7 +61,7 @@ const DesktopApp = ({ setDisplayFullScreen, setEthBalance, ethBalance }) => {
         console.log("the tx is: ", tx);
 
         console.log("the anky genesis contract is: ", ankyGenesisContract);
-      }
+      } catch (error) {}
     }
     getUsersAnky();
   }, [thisWallet]);
@@ -101,7 +104,7 @@ const DesktopApp = ({ setDisplayFullScreen, setEthBalance, ethBalance }) => {
         return (
           <CollectionPage
             ethBalance={ethBalance}
-            setDisplayFullScreen={setDisplayFullScreen}
+            setDisplayFullScreenIndex={setDisplayFullScreenIndex}
           />
         );
       case "/about":
