@@ -12,6 +12,7 @@ const DesktopApp = ({
   mintingError,
 }) => {
   const router = useRouter();
+  const [loadingMintAnky, setLoadingMintAnky] = useState(false);
   const [ethBalance, setEthBalance] = useState(0);
   const { login, authenticated, user, logout, ready, loading } = usePrivy();
   const { wallets } = useWallets();
@@ -69,6 +70,7 @@ const DesktopApp = ({
   async function mintAnky() {
     try {
       if (!thisWallet) return;
+      setLoadingMintAnky(true);
       console.log("the wallet is: ", thisWallet);
       const provider = await thisWallet.getEthersProvider();
       console.log("the provider is: ", provider);
@@ -89,7 +91,6 @@ const DesktopApp = ({
         const mintedTokenId = BigNumber.from(tx.receipt.logs[0].topics[3]);
         setMintedTokenId(mintedTokenId);
       }
-      console.log("the tx is: ", tx);
       alert(
         "your anky was minted. i will make this flow better, but i had to ship this thing"
       );
@@ -113,6 +114,7 @@ const DesktopApp = ({
           <CollectionPage
             mintAnky={mintAnky}
             ethBalance={ethBalance}
+            loadingMintAnky={loadingMintAnky}
             mintingError={mintingError}
             setDisplayFullScreenIndex={setDisplayFullScreenIndex}
           />
@@ -132,7 +134,7 @@ const DesktopApp = ({
                   size="sm"
                   className="p-2 w-fit my-2 bg-purple-400 border border-black rounded-xl"
                 >
-                  mint anky genesis
+                  {loadingMintAnky ? "minting..." : "mint anky genesis"}
                 </button>
                 {mintingError && (
                   <small className=" text-red-200">{mintingError}</small>

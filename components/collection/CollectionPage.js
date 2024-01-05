@@ -11,6 +11,7 @@ const CollectionPage = ({
   setDisplayFullScreenIndex,
   ethBalance,
   mintingError,
+  loadingMintAnky,
 }) => {
   const { authenticated, login } = usePrivy();
   const orderedMetadata = orderByIndex(metadata);
@@ -32,6 +33,7 @@ const CollectionPage = ({
         <div className="flex ">
           <MintAnkyButton
             mintAnky={mintAnky}
+            loadingMintAnky={loadingMintAnky}
             ethBalance={ethBalance}
             mintingError={mintingError}
           />
