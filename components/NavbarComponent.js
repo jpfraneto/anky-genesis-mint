@@ -36,15 +36,24 @@ export default function NavbarComponent() {
   return (
     <Navbar expanded={expanded} bg="light" expand="lg" className="mb-3">
       <Container>
-        <Link href="/">ANKY</Link>
+        <Link href="/" className="hover:text-purple-600 ">
+          ANKY
+        </Link>
         <Navbar.Toggle
           onClick={() => setExpanded(expanded ? false : "expanded")}
           aria-controls="responsive-navbar-nav"
         />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link href="/about">About</Link>
-            <Link href="/collection">Collection</Link>
+          <Nav className="-ml-1">
+            <Link href="/about" className="mx-2 hover:text-purple-600">
+              About
+            </Link>
+            <Link href="/collection" className="mx-2 hover:text-purple-600">
+              Collection
+            </Link>
+            <Link href="/links" className="mx-2 hover:text-purple-600">
+              Links
+            </Link>
             {/* Add other navigation links as needed */}
           </Nav>
           <Nav>
@@ -58,9 +67,11 @@ export default function NavbarComponent() {
                 </Navbar.Text>
               </>
             ) : (
-              <Button variant="outline-primary" onClick={login}>
-                Login
-              </Button>
+              <div className="mt-2">
+                <Button variant="outline-primary" onClick={login}>
+                  Login
+                </Button>
+              </div>
             )}
           </Nav>
         </Navbar.Collapse>

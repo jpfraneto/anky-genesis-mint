@@ -4,48 +4,44 @@ const AboutPage = () => {
   return (
     <div className="p-2 about-text md:w-96 mx-auto md:mt-2">
       <p>the pipe is ready.</p>
-      <p>there is sweat coming from the side of my eyes.</p>
+      <p>there is a drop of sweat coming from the side of my right eye.</p>
       <p>she is holding space for me.</p>
       <p>i feel her peace.</p>
       <p>as an invitation to bring forth.</p>
       <p>the bravery that is needed in order to face myself.</p>
       <p>to honor my demons.</p>
-      <p>to be with them.</p>
       <p>to embrace them.</p>
       <p>to face it all.</p>
       <p>there is a big amount of tension present in my body.</p>
       <p>i feel it. i breathe into it.</p>
       <p>part of it goes away,</p>
-      <p>but there is also part of it that won&#39;t go away.</p>
+      <p>but there is part of it that won&#39;t go away.</p>
       <p>
         there is a degree of tension that is inherent to being in this body.
       </p>
-      <p>and i ask mysefl:</p>
-      <p>will that tension go away?</p>
-      <p>will i ever be free?</p>
+      <p>will that tension ever go away?</p>
+      <p>will i be free one day?</p>
       <p>i feel how embedded of expectations my thoughts are.</p>
       <p>and i tell myself: just let go.</p>
-      <p>the look in her face invites me to do the same.</p>
-      <p>but she won&#39;t repeat it.</p>
+      <p>the look in her face guides me on that direction.</p>
+      <p>but she won&#39;t insist.</p>
       <p>she will let me have my own trip.</p>
-      <p>she knows that it is better that way.</p>
-      <p>she knows that it is my road to walk.</p>
-      <p>she is just here to hold space for that.</p>
-      <p>i see in front of me, that medicine that has shown the way to many.</p>
-      <p>the medicine that is there for those that want to be alive.</p>
+      <p>she knows it is better that way. that i have to walk my own road.</p>
+      <p>her presence is only for holding space.</p>
+      <p>i see in front of me, the medicine that has shown the way to many.</p>
+      <p>it is there for those that want to be alive.</p>
       <p>to see the truth.</p>
       <p>to experience the truth.</p>
-      <p>to see themselves as the truth.</p>
+      <p>to realize themselves as the truth.</p>
       <p>the medicine is there.</p>
-      <p>reflecting myself with its raw smell.</p>
-      <p>with its invitation.</p>
+      <p>reflecting myself with its raw smell. its invitation.</p>
       <p>i see myself reflected on the medicine.</p>
-      <p>i am, somehow, that medicine myself.</p>
-      <p>i am here because of that medicine that is inside me.</p>
+      <p>i am, somehow, it.</p>
+      <p>i am here because of the medicine that is inside me.</p>
       <p>
-        i am here in the quest of unfolding that medicine. of making it shine.
+        on the eternal quest of unfolding that medicine. of making it shine.
       </p>
-      <p>i am here to make that medicine shine.</p>
+      <p>i am here to make it shine.</p>
       <p>to bring it to life.</p>
       <p>to honor it with what is alive.</p>
       <p>the medicine is alive.</p>
@@ -72,7 +68,7 @@ const AboutPage = () => {
       </p>
       <p>she smiles.</p>
       <p>she knows the turmoil that is inside.</p>
-      <p>she has experienced herself.</p>
+      <p>she has experienced it herself.</p>
       <p>but a lifetime of walking the road has brought her to this point.</p>
       <p>sincerity over all. committment to her own evolution.</p>
       <p>i trust her.</p>

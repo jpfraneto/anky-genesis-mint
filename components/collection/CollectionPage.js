@@ -23,11 +23,11 @@ const CollectionPage = ({
   return (
     <div className="flex flex-col pt-4 pb-8">
       <p className="px-3 mb-2">
-        These are 30 of the 8888 characters of the Anky Genesis NFT collection.
+        These are only 30 of the 8888 characters of the Anky Genesis NFT
+        collection.
       </p>
       <p className="px-3 mb-2">
-        Each one of them was uniquely generated using midjourney and has its
-        unique lore.
+        Each one of them has a unique story as part of the Ankyverse.
       </p>
       {authenticated ? (
         <div className="flex ">
@@ -45,7 +45,7 @@ const CollectionPage = ({
       ) : (
         <div className="flex ml-4">
           <Button variant="outline-primary" onClick={login}>
-            Login
+            login to mint yours
           </Button>
         </div>
       )}

@@ -9,7 +9,6 @@ const MintAnkyButton = ({
 }) => {
   const { wallets } = useWallets();
   const [mintedTokenId, setMintedTokenId] = useState("");
-  const [transactionSuccess, setTransactionSuccess] = useState(false);
   const thisWallet = wallets[0];
 
   return (

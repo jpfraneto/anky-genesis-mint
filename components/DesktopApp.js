@@ -3,13 +3,16 @@ import { useRouter } from "next/router";
 import { usePrivy, useWallets } from "@privy-io/react-auth";
 import AnkyGenesisAbi from "../lib/AnkyGenesisAbi";
 import AboutPage from "./about/AboutPage";
+import LinksPage from "./links/LinksPage";
 import { ethers } from "ethers";
 import CollectionPage from "./collection/CollectionPage";
 
 const DesktopApp = ({
   setDisplayFullScreenIndex,
   setMintingError,
+  setTransactionSuccess,
   mintingError,
+  setMintedTokenId,
 }) => {
   const router = useRouter();
   const [loadingMintAnky, setLoadingMintAnky] = useState(false);
@@ -91,9 +94,7 @@ const DesktopApp = ({
         const mintedTokenId = BigNumber.from(tx.receipt.logs[0].topics[3]);
         setMintedTokenId(mintedTokenId);
       }
-      alert(
-        "your anky was minted. i will make this flow better, but i had to ship this thing"
-      );
+      alert(`your anky was minted. it is number ${mintedTokenId}`);
     } catch (err) {
       console.log("in the error", err);
       console.log(ethBalance);
@@ -121,6 +122,8 @@ const DesktopApp = ({
         );
       case "/about":
         return <AboutPage />;
+      case "/links":
+        return <LinksPage />;
 
       default:
         return (

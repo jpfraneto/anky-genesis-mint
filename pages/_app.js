@@ -36,6 +36,8 @@ export default function App({ Component, pageProps }) {
   const [isMobile, setIsMobile] = useState(false);
   const [displayFullScreenIndex, setDisplayFullScreenIndex] = useState(null);
   const [mintingError, setMintingError] = useState("");
+  const [transactionSuccess, setTransactionSuccess] = useState(false);
+  const [mintedTokenId, setMintedTokenId] = useState("");
 
   const setDisplayFullScreen = (index) => {
     setDisplayFullScreenIndex(index);
@@ -100,7 +102,9 @@ export default function App({ Component, pageProps }) {
           <NavbarComponent />
           <DesktopApp
             {...pageProps}
+            setTransactionSuccess={setTransactionSuccess}
             mintingError={mintingError}
+            setMintedTokenId={setMintedTokenId}
             setMintingError={setMintingError}
             setDisplayFullScreenIndex={setDisplayFullScreenIndex}
           />
