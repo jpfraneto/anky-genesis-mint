@@ -69,7 +69,7 @@ const AboutPage = () => {
       <p>she smiles.</p>
       <p>she knows the turmoil that is inside.</p>
       <p>she has experienced it herself.</p>
-      <p>but a lifetime of walking the road has brought her to this point.</p>
+      <p>as the vehicle that has brought her to this present.</p>
       <p>sincerity over all. committment to her own evolution.</p>
       <p>i trust her.</p>
       <p>this is not the first time that she is next to me.</p>
@@ -78,17 +78,16 @@ const AboutPage = () => {
       <p>because of the depths of what is see in her.</p>
       <p>fueled by tenderness.</p>
       <p>rich in love.</p>
-      <p>there is love that comes through her voice,</p>
-      <p>when she says:</p>
+      <p>the love that comes through her voice whe she says:</p>
       <p>just let go.</p>
       <p>as if it was so easy.</p>
       <p>as if i knew how.</p>
       <p>and a new thought comes forth:</p>
       <p>how do i stop thinking?</p>
-      <p>to where do i point my consciousness in order to let go?</p>
+      <p>to where do i point my awareness in order to let go?</p>
       <p>how do i have to frame my experience?</p>
       <p>but that is also embedded in expectations.</p>
-      <p>all of what comes inside is embedded in expectations.</p>
+      <p>all of what comes inside is just an enormous mass of them.</p>
       <p>
         all of what is present. all of what is alive. all of what is inside is
         deeply embedded in expectations.
@@ -107,25 +106,24 @@ const AboutPage = () => {
         go.
       </p>
       <p>and so it goes.</p>
-      <p>that tension, giving live to this moment.</p>
-      <p>giving life to what is felt inside.</p>
+      <p>that tension, giving life to this moment. to what is felt inside</p>
       <p>the medicine is in front of me... waiting.</p>
-      <p>the medicine is patient.</p>
-      <p>the medicine knows its timing.</p>
+      <p>it is patient.</p>
+      <p>it knows its timing.</p>
       <p>it will wait for me.</p>
       <p>it will hold space for me.</p>
       <p>she knows how to work with it.</p>
       <p>she has seen the devil in the eyes.</p>
-      <p>she has seen the devil in her eyes.</p>
+      <p>
+        she has seen the devil in her reflection coming back from the mirror.
+      </p>
+
       <p>she knows it exists within her.</p>
       <p>and she accepts it.</p>
       <p>she embraces every aspect of it.</p>
       <p>i don&#39;t.</p>
       <p>it is just so hard.</p>
-      <p>
-        but i guess that that is also part of what letting go is about,
-        isn&#39;t it?
-      </p>
+      <p>but that is also part of what letting go is about, isn&#39;t it?</p>
       <p>remembering the future.</p>
       <p>honoring this moment.</p>
       <p>experiencing what is through the lens of what has always been.</p>
@@ -137,9 +135,7 @@ const AboutPage = () => {
       </p>
       <p>i was missing her voice.</p>
       <p>she cries in the quest of the warmth of her mother.</p>
-      <p>
-        she needs the warmth of her mother in order to come up with a new story.
-      </p>
+      <p>she needs it in order to come up with a new story.</p>
       <p>she is there for her mother.</p>
       <p>she is there for her.</p>
       <p>she is there for the experience of her.</p>
@@ -148,62 +144,61 @@ const AboutPage = () => {
       <p>i remember the warmth of my mother.</p>
       <p>or at least i try to.</p>
       <p>there is no rational memory of it.</p>
-      <p>it is just a blurry sensation that comes forth from the quest.</p>
+      <p>just a blurry sensation that comes as a consequence the quest.</p>
       <p>from the exploration of what may be alive inside,</p>
-      <p>when the mother is put into the frame.</p>
+      <p>when the idea of the mother is brought into awareness.</p>
       <p>all the warmth that was felt.</p>
       <p>all the judgements towards the way on which she did her work.</p>
       <p>who am i to judge what another human being did?</p>
       <p>
-        who am i to frame their circumstances as if they were something that i
-        can understand?
+        who am i to compress their circumstances as if they were something that
+        i can understand?
       </p>
       <p>
-        who am i to place that separation between me and the person that brought
-        me to life?
+        to place that separation between me and the person that brought me to
+        life?
       </p>
-      <p>that had me inside her womb.</p>
-      <p>that gave me what i needed in order to survive.</p>
+      <p>
+        she had me inside her womb. gaving me what i needed in order to survive.
+      </p>
       <p>but that judgement is there. present and alive.</p>
       <p>and i surrender into it.</p>
-      <p>i surrender into this moment.</p>
-      <p>into the experience of this moment.</p>
+      <p>through the sensations that are felt right now.</p>
+      <p>embracing experience of this moment.</p>
       <p>it is alive. it is all alive.</p>
       <p>and the medicine is still waiting.</p>
-      <p>patiently, waiting inside that pipe.</p>
+      <p>patiently, inside the pipe.</p>
       <p>holding space for me. inviting me to come forth.</p>
-      <p>waitng and waiting and waiting.</p>
+      <p>waiting and waiting and waiting.</p>
       <p>
-        and i keep waiting for these thoughts to cease to come in order to
-        develop a little bit of more clarity.
+        and i keep waiting for these thoughts to cease to come so that i can
+        develop more clarity.
       </p>
       <p>but it won&#39;t come.</p>
       <p>i don&#39;t know how to make it come.</p>
-      <p>they just keep coming.</p>
-      <p>and i feel dizzy.</p>
-      <p>slight desperation comes into me.</p>
+      <p>i feel dizzy.</p>
+      <p>a wave of desperation makes it appearance.</p>
       <p>am i a failure?</p>
-      <p>the ongoing experience of being a failure takes over once again.</p>
+      <p>the father of all negative thoughts makes it appearance again.</p>
       <p>i am here, trying to do something, and can&#39;t.</p>
       <p>am i a failure?</p>
-      <p>is this a failure?</p>
-      <p>and there is an ongoing experience of that failure-ness.</p>
-      <p>it is quite a familiar feeling.</p>
-      <p>the one of being a failure.</p>
+      <p>is this how being failure feels?</p>
+      <p>and what follows is an ongoing experience of that failure-ness.</p>
+      <p>quite a familiar feeling.</p>
       <p>i feel it to the core of my being.</p>
       <p>have i always been a failure?</p>
       <p>it is just that the focus always tends to go to what is missing.</p>
       <p>what could be done better.</p>
       <p>and i&#39;m the main target of that criticism.</p>
       <p>you are the failure that needs to be actualized.</p>
-      <p>you are the failure that needs to come forth.</p>
+      <p>you are the failure that needs to be transformed.</p>
       <p>when are you going to be brave enough?</p>
       <p>the judgement is just too strong.</p>
       <p>they just won&#39;t stop coming.</p>
-      <p>the thoughts just won&#39;t stop coming.</p>
-      <p>and they feel brutal.</p>
-      <p>i feel them all.</p>
-      <p>i smile and invite them in.</p>
+      <p>these thoughts won&#39;t stop coming.</p>
+      <p>and they feel overwhelming.</p>
+      <p>but i feel them all.</p>
+      <p>smiling, inviting them all in.</p>
       <p>without being ready i tell myself: i&#39;m ready.</p>
       <p>but am i?</p>
       <p>am i ready to be myself?</p>
@@ -226,14 +221,14 @@ const AboutPage = () => {
       <p>the heartbeat is about to explode.</p>
       <p>she brings the pipe into my mouth and says:</p>
       <p>just let go.</p>
-      <p>as if it was that easy, i smile again to myself.</p>
-      <p>she lights it all and i breathe as if the world was going to end.</p>
+      <p>i smile again to myself: as if it was that easy.</p>
+      <p>she lights it. i breathe as if the world was going to end.</p>
       <p>i bring it all in.</p>
-      <p>there is an intense willingness to cough.</p>
+      <p>there is an intense phisical reaction. the cough comes.</p>
       <p>
         but i integrate it with a strong willingness to experience my truth.
       </p>
-      <p>to experience every aspect of what i am.</p>
+      <p>every aspect of what, or who, or when, or why, or where i am.</p>
       <p>to welcome it all.</p>
       <p>she smiles, and with tenderness brings me to my back.</p>
       <p>i lay down.</p>
@@ -250,7 +245,7 @@ const AboutPage = () => {
       <p>violet.</p>
       <p>white.</p>
       <p>welcome to the ankyverse, i hear on the background of existence.</p>
-      <p className="mb-4">but that "i" is not there anymore.</p>
+      <p className="mb-4">but that "i" is just not there anymore.</p>
     </div>
   );
 };
